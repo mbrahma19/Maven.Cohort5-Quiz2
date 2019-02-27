@@ -6,7 +6,7 @@ import java.util.Collections;
 
 
 public class ArrayUtility {
-    public Integer[] merge(Integer[] array1, Integer[] array2) {
+    public static Integer[] merge(Integer[] array1, Integer[] array2) {
         ArrayList<Integer> array1AsList = returnAnIntegerList(array1);
         ArrayList<Integer> array2AsList = returnAnIntegerList(array2);
 
@@ -24,12 +24,12 @@ public class ArrayUtility {
         return returnIntegeArray(rotatedArrayList);
     }
 
-    public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
+    public static Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
         ArrayList<Integer> arrayList = returnAnIntegerList(merge(array1,array2));
         return Collections.frequency(arrayList,valueToEvaluate);
     }
 
-    public Integer mostCommon(Integer[] array) {
+    public static Integer mostCommon(Integer[] array) {
         ArrayList<Integer> arrayList = returnAnIntegerList(array);
         Integer mostOccurences = arrayList.get(0);
 
@@ -41,11 +41,11 @@ public class ArrayUtility {
         return mostOccurences;
     }
 
-    public ArrayList<Integer> returnAnIntegerList(Integer[] arrayToMorph){
+    public static ArrayList<Integer> returnAnIntegerList(Integer[] arrayToMorph){
         return new ArrayList<>(Arrays.asList(arrayToMorph));
     }
 
-    public Integer[] returnIntegeArray(ArrayList<Integer> arrayList){
+    public static Integer[] returnIntegeArray(ArrayList<Integer> arrayList){
         return arrayList.toArray(new Integer[arrayList.size()]);
     }
 
