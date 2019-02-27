@@ -17,11 +17,11 @@ public class ArrayUtility {
     public Integer[] rotate(Integer[] array, Integer index) {
         Integer[] rotatedArray = new Integer[array.length];
 
-        for(int i = array.length-1 ; i > 0; i--){
+        for(int i = array.length-1 ; i >= 0; i--){
             int newPosition = i - index;
             if(newPosition >= 0 && newPosition < array.length){
                 rotatedArray[newPosition] = array[i];
-            }else{
+            }else if(newPosition < 0){
                 rotatedArray[newPosition + array.length] = array[i];
             }
         }
