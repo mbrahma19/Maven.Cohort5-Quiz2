@@ -20,13 +20,13 @@ public class Router {
         return treeMap.size();
     }
 
-    public String getController(String controller) {
+    public String getController(String path) {
         for(Map.Entry<String,String> k : treeMap.entrySet()){
-            if(k.getValue().equals(controller)){
+            if(k.getValue().equals(path)){
                 return k.getKey();
             }
         }
-        return treeMap.get(controller);
+        return treeMap.get(path);
     } //TODO asking to pass in path but it actually needs controller
 
     public void update(String path, String studentController) {
