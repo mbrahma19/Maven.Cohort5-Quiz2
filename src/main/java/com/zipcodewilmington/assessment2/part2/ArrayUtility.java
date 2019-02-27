@@ -15,13 +15,18 @@ public class ArrayUtility {
     }
 
     public Integer[] rotate(Integer[] array, Integer index) {
-        ArrayList<Integer> rotatedArrayList = new ArrayList<>();
+        Integer[] rotatedArray = new Integer[array.length];
 
-        for(int i = 0 ; i < array.length; i++){
-            //TODO: complete the method at the end
+        for(int i = array.length-1 ; i > 0; i--){
+            int newPosition = i - index;
+            if(newPosition >= 0 && newPosition < array.length){
+                rotatedArray[newPosition] = array[i];
+            }else{
+                rotatedArray[newPosition + array.length] = array[i];
+            }
         }
 
-        return returnIntegeArray(rotatedArrayList);
+        return rotatedArray;
     }
 
     public static Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
